@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Shopnanny.Core.Application.Interfaces;
 using Shopnanny.Core.Entities;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

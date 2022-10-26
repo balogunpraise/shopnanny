@@ -63,5 +63,52 @@ namespace Shopnanny.Controllers
             }
             return RedirectToAction("Register", new { error = "A user with same email already exists." });
         }
+
+
+
+        [HttpGet]
+        public IActionResult Login(string error)
+        {
+            if(error != null)
+            {
+                ViewBag.Error = error;
+            }
+            return View();
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> Login(LoginViewModel login)
+        {
+            if (ModelState.IsValid)
+            {
+                ApplicationUser? user = null;
+                if (login.Cred.Contains('@') && login.Cred.Contains(".com"))
+                {
+                    user = await _userManager.FindByEmailAsync(login.Cred);
+                }
+                else
+                {
+                    user = await _userManager.FindByNameAsync(login.Cred);
+                }
+                if (user != null)
+                {
+                    var result = await _signinManager.PasswordSignInAsync(user, login.Password, login.RememberMe, false);
+                    if (result.Succeeded)
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+            }
+            return RedirectToAction("Login", new { error = "Invalid Credentials" });
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> Logout()
+        {
+            await _signinManager.SignOutAsync();
+            return RedirectToAction("Login");
+        }
     }
 }
