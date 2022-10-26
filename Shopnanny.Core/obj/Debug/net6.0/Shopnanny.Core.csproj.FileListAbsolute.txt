@@ -1,0 +1,12 @@
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\bin\Debug\net6.0\Shopnanny.Core.deps.json
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\bin\Debug\net6.0\Shopnanny.Core.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\bin\Debug\net6.0\Shopnanny.Core.pdb
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.csproj.AssemblyReference.cache
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.AssemblyInfoInputs.cache
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.AssemblyInfo.cs
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.csproj.CoreCompileInputs.cache
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\refint\Shopnanny.Core.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.pdb
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Core\obj\Debug\net6.0\ref\Shopnanny.Core.dll

@@ -1,0 +1,15 @@
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\bin\Debug\net6.0\Shopnanny.Infrastructure.deps.json
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\bin\Debug\net6.0\Shopnanny.Infrastructure.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\bin\Debug\net6.0\Shopnanny.Infrastructure.pdb
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\bin\Debug\net6.0\Shopnanny.Core.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\bin\Debug\net6.0\Shopnanny.Core.pdb
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.AssemblyInfo.cs
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.csproj.CopyComplete
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\refint\Shopnanny.Infrastructure.dll
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.pdb
+C:\Users\Bayshore\Desktop\Shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\ref\Shopnanny.Infrastructure.dll
