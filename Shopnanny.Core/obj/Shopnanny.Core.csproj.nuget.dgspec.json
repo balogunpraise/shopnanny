@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bayshore\\Desktop\\Shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj": {}
+    "C:\\Users\\pbalogun\\Desktop\\shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bayshore\\Desktop\\Shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj": {
+    "C:\\Users\\pbalogun\\Desktop\\shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bayshore\\Desktop\\Shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj",
+        "projectUniqueName": "C:\\Users\\pbalogun\\Desktop\\shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj",
         "projectName": "Shopnanny.Core",
-        "projectPath": "C:\\Users\\Bayshore\\Desktop\\Shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj",
-        "packagesPath": "C:\\Users\\Bayshore\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bayshore\\Desktop\\Shopnanny\\Shopnanny.Core\\obj\\",
+        "projectPath": "C:\\Users\\pbalogun\\Desktop\\shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj",
+        "packagesPath": "C:\\Users\\pbalogun\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pbalogun\\Desktop\\shopnanny\\Shopnanny.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Bayshore\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pbalogun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +43,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.20.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
@@ -51,8 +58,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

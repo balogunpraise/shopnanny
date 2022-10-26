@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Shopnanny.Core.Entities
 {
-    public class Otp
+    public class Otp : BaseEntity
     {
+        public string Code { get; set; } = string.Empty;
+        public string Type { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
     }
 }

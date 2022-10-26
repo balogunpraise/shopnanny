@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Shopnanny.Core.Entities
 {
-    public class Country
+    public class Country : BaseEntity
     {
+        public string Name { get; set; } = string.Empty;
+        public int AddressId { get; set; }
+        public Address Address { get; set; }
     }
 }

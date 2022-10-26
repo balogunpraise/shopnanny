@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Shopnanny.Core.Entities
 {
-    public class Category
+    public class ProductImage : BaseEntity
     {
-        public string Name { get; set; } = string.Empty;
-        public ICollection<Product> Products { get; set; }
+        public int ProductId { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
     }
 }

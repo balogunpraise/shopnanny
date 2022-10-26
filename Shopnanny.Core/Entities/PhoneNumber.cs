@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shopnanny.Core.Entities
 {
-    public class PhoneNumber
+    public class PhoneNumber : BaseEntity
     {
+        public string Number { get; set; }
+        public string Type { get; set; }
+        public string UserId { get; set; }
+        public bool Status { get; set; }
+
     }
 }

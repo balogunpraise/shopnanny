@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Shopnanny.Core.Entities
 {
-    public class Order
+    public class Order : BaseEntity
     {
+        public string UserId { get; set; } = string.Empty;
+        public decimal TotalAmmount { get; set; }
+        public int PaymentId { get; set; }
+        public string ProcessedByUserId { get; set; } = string.Empty;
+        public bool Status { get; set; }
+
     }
 }
