@@ -8,8 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Validators\" />
-    <Folder Include="ViewModels\" />
+    <Compile Remove="Validators\**" />
+    <Content Remove="Validators\**" />
+    <EmbeddedResource Remove="Validators\**" />
+    <None Remove="Validators\**" />
   </ItemGroup>
 
   <ItemGroup>

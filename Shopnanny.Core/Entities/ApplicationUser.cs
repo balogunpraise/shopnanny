@@ -15,7 +15,6 @@ namespace Shopnanny.Core.Entities
         public ICollection<Order>? Orders { get; set; }
         public ICollection<Otp>? Otps { get; set; }
         public ICollection<Address>? Addresses { get; set; }
-        public ICollection<PhoneNumber>? PhoneNumbers { get; set; }
         public ICollection<PromoCodeUseage>? PromoCodeUseages { get; set; }
 
     }

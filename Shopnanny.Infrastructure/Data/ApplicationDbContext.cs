@@ -1,14 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Shopnanny.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Shopnanny.Infrastructure.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -27,11 +24,8 @@ namespace Shopnanny.Infrastructure.Data
         public DbSet<PromoCode> PromoCodes { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Country> Countries { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Otp> Otps { get; set; }
-        public DbSet<PhoneNumber> PhoneNumbers { get; set; }
         public DbSet<PromoCodeUseage> PromoCodeUseages { get; set; }
 
     }

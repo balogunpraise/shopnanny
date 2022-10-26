@@ -12,7 +12,7 @@ namespace Shopnanny.Infrastructure
             var connectionString = config.GetConnectionString("DefaultConnection");
             service.AddDbContext<ApplicationDbContext>(option =>
             option.UseMySql(connectionString, serverVersion: ServerVersion.AutoDetect(connectionString)));
-            //service.AddTransient<ITokenService, TokenService>();
+            service.AddTransient<TokenService>();
             return service;
         }
     }

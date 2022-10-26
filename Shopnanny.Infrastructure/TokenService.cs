@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Shopnanny.Infrastructure
 {
-    public class TokenService  : ITokenSevice
+    public class TokenService
     {
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _key;
