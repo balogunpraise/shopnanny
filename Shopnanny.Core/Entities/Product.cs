@@ -15,6 +15,8 @@ namespace Shopnanny.Core.Entities
         public int Quantity { get; set; }
         public int MinOrderQuantity { get; set; }
         public int LowStockQuantity { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public ICollection<Order>? Orders { get; set; }
         public ICollection<Payment>? Payments { get; set; }
         public Cart Cart { get; set; }
