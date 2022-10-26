@@ -100,3 +100,5 @@ C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\obj\Debug\net6.0\refint\Shopnanny.
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\obj\Debug\net6.0\Shopnanny.pdb
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\obj\Debug\net6.0\Shopnanny.genruntimeconfig.cache
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\obj\Debug\net6.0\ref\Shopnanny.dll
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\Newtonsoft.Json.dll
