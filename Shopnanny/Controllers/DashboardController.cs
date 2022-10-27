@@ -8,5 +8,37 @@ namespace Shopnanny.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Product()
+        {
+            return View();
+        }
+
+        public IActionResult Category()
+        {
+            return View();
+        }
+
+        public IActionResult Inventory()
+        {
+            return View();
+        }
+
+        public IActionResult Notification()
+        {
+            return View();
+        }
+
+        public IActionResult Sales()
+        {
+            return View();
+        }
+
+
+        public IActionResult Orders()
+        {
+            return View();
+        }
     }
 }
