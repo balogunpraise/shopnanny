@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
+using Shopnanny.Core.Application.Interfaces;
 using Shopnanny.Core.Entities;
 using Shopnanny.Infrastructure;
 using Shopnanny.Infrastructure.Data;
+using Shopnanny.Infrastructure.Repositories;
 using Shopnanny.Infrastructure.SeedData;
 using Shopnanny.ServiceExtensions;
 
@@ -11,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddInfrastructureConfiguration(builder.Configuration);
 builder.Services.AddIdentityService(builder.Configuration);
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();

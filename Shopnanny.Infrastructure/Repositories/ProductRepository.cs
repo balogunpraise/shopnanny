@@ -79,5 +79,10 @@ namespace Shopnanny.Infrastructure.Repositories
             }
 
         }
+
+        public async Task<List<Product>> GetAllProducts()
+        {
+            return await _context.Products.ToListAsync();
+        }
     }
 }

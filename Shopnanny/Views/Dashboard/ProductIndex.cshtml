@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Goods";
+    Layout = "_GlobalAdminLayout";
+    var products = ViewBag.Product as ICollection<Shopnanny.Core.Entities.Product>;
+    var count = 1;
+}
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   <th>S/N</th>
+                   <th>Product</th>
+                   <th>Price</th>
+                   <th>Total Quantity</th>
+                   <th>Minimum Order Qt</th>
+                   <th>Low Stock Quantity</th>
+                   <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var product in products)
+                {
+                   <tr>
+                       <td>@(count++)</td>
+                       <td>@product.Name</td>
+                       <td>@product.Price</td>
+                       <td>@product.Quantity</td>
+                       <td>@product.MinOrderQuantity</td>
+                       <td>@product.LowStockQuantity</td>
+                       <td>
+                           <button style="border: 1px solid darkred; border-radius:3px; cursor: pointer"><i style="color: darkred" class="fa fa-trash"></i></button>
+                           <button style="border: 1px solid forestgreen; border-radius:3px; cursor: pointer"><i style="color: forestgreen" class="fa fa-edit"></i></button>
+                       </td>
+                   </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

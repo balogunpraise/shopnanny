@@ -43,8 +43,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXE9yZGVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pbalogun/Desktop/shopnanny/Shopnanny/Views/Dashboard/Product.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb2R1Y3QuY3NodG1s
+[C:/Users/pbalogun/Desktop/shopnanny/Shopnanny/Views/Dashboard/ProductIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXFByb2R1Y3RJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pbalogun/Desktop/shopnanny/Shopnanny/Views/Dashboard/Sales.cshtml]
@@ -57,6 +57,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/pbalogun/Desktop/shopnanny/Shopnanny/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pbalogun/Desktop/shopnanny/Shopnanny/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pbalogun/Desktop/shopnanny/Shopnanny/Views/Shared/Error.cshtml]
