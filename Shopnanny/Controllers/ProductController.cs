@@ -50,5 +50,11 @@ namespace Shopnanny.Controllers
             await _productRepository.DeleteProduct(id);
             return RedirectToAction("ProductIndex", "Dashboard");
         }
+
+        public async Task<IActionResult> ToggleProductHotSale(int id)
+        {
+            await _productRepository.ToggleProductHotSale(id);
+            return RedirectToAction("ProductIndex", "Dashboard");
+        }
     }
 }

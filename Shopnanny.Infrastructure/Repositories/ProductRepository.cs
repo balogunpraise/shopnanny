@@ -79,9 +79,30 @@ namespace Shopnanny.Infrastructure.Repositories
 
         }
 
+        public async Task ToggleProductHotSale(int id)
+        {
+            try
+            {
+                var product = await _context.Products.FindAsync(id);
+                if (product != null)
+                {
+                    product.HotSale = !product.HotSale;
+                    await _context.SaveChangesAsync();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public async Task<List<Product>> GetAllProducts()
         {
             return await _context.Products.Include(x =>x.ProductImages).ToListAsync();
+        }
+
+        public async Task<List<Product>> GetAllHotSaleProducts()
+        {
+            return await _context.Products.Where(x => x.HotSale).Include(c => c.ProductImages).ToListAsync();
         }
     }
 }

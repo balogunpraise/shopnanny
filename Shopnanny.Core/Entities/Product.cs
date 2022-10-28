@@ -13,6 +13,7 @@ namespace Shopnanny.Core.Entities
         public List<ProductImage>? ProductImages { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+        public bool HotSale { get; set; }
         public int MinOrderQuantity { get; set; }
         public int LowStockQuantity { get; set; }
         /*public int CategoryId { get; set; }

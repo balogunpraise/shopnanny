@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Shopnanny.Core.Application.Constants;
 using Shopnanny.Core.Application.Interfaces;
 using Shopnanny.Core.Entities;
 
@@ -16,7 +18,6 @@ namespace Shopnanny.Controllers
         {
             return View();
         }
-
 
         public async Task<IActionResult> ProductIndex()
         {

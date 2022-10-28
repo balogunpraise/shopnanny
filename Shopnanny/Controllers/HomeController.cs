@@ -18,7 +18,7 @@ namespace Shopnanny.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var displayProducts = await _productRepository.GetAllProducts();
+            var displayProducts = await _productRepository.GetAllHotSaleProducts();
             var usedProducts = displayProducts.Take(10).ToList();
             ViewBag.DisplayProducts = usedProducts;
             return View();

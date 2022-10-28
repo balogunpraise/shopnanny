@@ -14,8 +14,8 @@ namespace Shopnanny.Core.Entities
         public string City { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
-        public string UserId { get; set; } = string.Empty;
-        public ApplicationUser User { get; set; }
+        //public string UserId { get; set; } = string.Empty;
+        //public ApplicationUser User { get; set; }
 
     }
 }

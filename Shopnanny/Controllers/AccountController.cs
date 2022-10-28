@@ -30,6 +30,15 @@ namespace Shopnanny.Controllers
             return View();
         }
 
+        public IActionResult Index(string error)
+        {
+            if(error != null)
+            {
+                ViewBag.Error = error;
+            }
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -96,7 +105,18 @@ namespace Shopnanny.Controllers
                     var result = await _signinManager.PasswordSignInAsync(user, login.Password, login.RememberMe, false);
                     if (result.Succeeded)
                     {
-                        return RedirectToAction("Index", "Home");
+                        if(await _userManager.IsInRoleAsync(user, RoleConstants.GlobalAdmin))
+                        {
+                            return RedirectToAction("Index", "Dashboard");
+                        }
+                        if(await _userManager.IsInRoleAsync(user, RoleConstants.Admin))
+                        {
+                            return RedirectToAction("Index", "Dashboard");
+                        }
+                        if(await _userManager.IsInRoleAsync(user, RoleConstants.Customer))
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
                     }
                 }
             }

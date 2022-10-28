@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Shopnanny.Core.Application.Constants;
 using Shopnanny.Core.Entities;
 using Shopnanny.Infrastructure.Data;
@@ -20,8 +21,10 @@ namespace Shopnanny.Infrastructure.SeedData
                 {
                     if (!roleManager.RoleExistsAsync(role).Result)
                     {
-                        var role1 = new IdentityRole();
-                        role1.Name = role;
+                        var role1 = new IdentityRole
+                        {
+                            Name = role
+                        };
                         roleManager.CreateAsync(role1).Wait();
                     }
                 }
@@ -34,6 +37,7 @@ namespace Shopnanny.Infrastructure.SeedData
             }
 
         }
+
         public static async Task SeedUserAsync(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             try
@@ -43,6 +47,7 @@ namespace Shopnanny.Infrastructure.SeedData
                     FirstName = "Praise",
                     LastName = "Balogun",
                     Email = "globaladmin@gmail.com",
+                    UserName = "globaladmin",
                     PhoneNumber = "08034879878",
                     Addresses = new List<Address>
                     {
@@ -67,6 +72,7 @@ namespace Shopnanny.Infrastructure.SeedData
                     FirstName = "Fortune",
                     LastName = "Balogun",
                     Email = "admin@gmail.com",
+                    UserName = "admin", 
                     PhoneNumber = "08034879228",
                     Addresses = new List<Address>
                     {
@@ -93,6 +99,7 @@ namespace Shopnanny.Infrastructure.SeedData
                     FirstName = "Onimsi",
                     LastName = "Balogun",
                     Email = "customer@gmail.com",
+                    UserName = "customer",
                     PhoneNumber = "08034879228",
                     Addresses = new List<Address>
                     {
@@ -111,6 +118,7 @@ namespace Shopnanny.Infrastructure.SeedData
                 {
                     await userManager.CreateAsync(adminUser, "Pa$$w0rd");
                     userManager.AddToRoleAsync(adminUser, RoleConstants.Customer).Wait();
+
                 }
                 await context.SaveChangesAsync();
             }
