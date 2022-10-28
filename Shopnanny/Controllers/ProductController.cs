@@ -40,7 +40,7 @@ namespace Shopnanny.Controllers
                 };
 
                 await _productRepository.AddProduct(product);
-                return RedirectToAction("Index", new { result = "Product was successfull added" });
+                return RedirectToAction("ProductIndex", "Dashboard", new { result = "Product was successfull added" });
             }
             return RedirectToAction("Index", new {error = "Product was not added"});
         }
