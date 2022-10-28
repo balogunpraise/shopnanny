@@ -19,9 +19,7 @@ namespace Shopnanny.Infrastructure.Repositories
             try
             {
                 var productAlreadyExists = await _context.Products.
-                Where(x => x.Name.Trim().
-                Equals(product.Name.Trim(), StringComparison.InvariantCultureIgnoreCase))
-                .SingleOrDefaultAsync();
+                Where(x => x.Name.ToLower() == product.Name.ToLower()).SingleOrDefaultAsync();
                 if (productAlreadyExists != null)
                 {
                     productAlreadyExists.Quantity += product.Quantity;
@@ -29,6 +27,7 @@ namespace Shopnanny.Infrastructure.Repositories
                     return productAlreadyExists;
                 }
                 await _context.Products.AddAsync(product);
+                await _context.SaveChangesAsync();
                 return product;
             }
             catch(Exception ex)
@@ -67,7 +66,7 @@ namespace Shopnanny.Infrastructure.Repositories
 
         public async Task AddProductToCategory(int productId, string categoryName)
         {
-            var category = await _context.Categories.
+            /*var category = await _context.Categories.
                     Where(x => x.Name.Equals(categoryName.Trim(), StringComparison.InvariantCultureIgnoreCase))
                     .FirstOrDefaultAsync();
             var product = await _context.Products.FindAsync(productId);
@@ -76,13 +75,13 @@ namespace Shopnanny.Infrastructure.Repositories
                 product.CategoryId = category.Id;
                 product.Category = category;
                 await _context.SaveChangesAsync();
-            }
+            }*/
 
         }
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(x =>x.ProductImages).ToListAsync();
         }
     }
 }

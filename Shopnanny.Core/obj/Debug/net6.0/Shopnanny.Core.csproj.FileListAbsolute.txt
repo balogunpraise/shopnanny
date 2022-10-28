@@ -22,3 +22,5 @@ C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Co
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Core\obj\Debug\net6.0\refint\Shopnanny.Core.dll
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.pdb
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Core\obj\Debug\net6.0\ref\Shopnanny.Core.dll
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Core\bin\Debug\net6.0\Shopnanny.Core.runtimeconfig.json
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Core\obj\Debug\net6.0\Shopnanny.Core.genruntimeconfig.cache

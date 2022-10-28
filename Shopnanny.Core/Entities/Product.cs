@@ -10,16 +10,16 @@ namespace Shopnanny.Core.Entities
     {
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public ICollection<ProductImage>? ProductImages { get; set; }
+        public List<ProductImage>? ProductImages { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public int MinOrderQuantity { get; set; }
         public int LowStockQuantity { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        /*public int CategoryId { get; set; }
+        public Category Category { get; set; }*/
         public ICollection<Order>? Orders { get; set; }
         public ICollection<Payment>? Payments { get; set; }
-        public Cart Cart { get; set; }
+        /*public Cart Cart { get; set; }*/
         public ICollection<CartItem> CartItems { get; set; }
 
     }

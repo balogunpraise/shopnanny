@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VD18HKilQAWi0uz0UuQuVU8CbHTgaJYj39C87eNZra8dG/M1z8FOSZsVK302hQVQ+YoPqBuDidg9LnMJ+ZNIGQ==",
+  "dgSpecHash": "Fs7qkTE0shNnqYG7pST5fsJ6PasjE/amb+JJt4nmlkTnMKv/lHAuuRqTGjlB7Al/0UrbKfmMUWcIM5qEac4zyA==",
   "success": true,
   "projectFilePath": "C:\\Users\\pbalogun\\Desktop\\shopnanny\\Shopnanny.Core\\Shopnanny.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pbalogun\\.nuget\\packages\\cloudinarydotnet\\1.20.0\\cloudinarydotnet.1.20.0.nupkg.sha512",
+    "C:\\Users\\pbalogun\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.10\\microsoft.aspnetcore.cryptography.internal.6.0.10.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.10\\microsoft.aspnetcore.cryptography.keyderivation.6.0.10.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -14,7 +15,9 @@
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.10\\microsoft.entityframeworkcore.abstractions.6.0.10.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.10\\microsoft.entityframeworkcore.analyzers.6.0.10.nupkg.sha512",
+    "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.10\\microsoft.entityframeworkcore.design.6.0.10.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.10\\microsoft.entityframeworkcore.relational.6.0.10.nupkg.sha512",
+    "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.10\\microsoft.entityframeworkcore.tools.6.0.10.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\pbalogun\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

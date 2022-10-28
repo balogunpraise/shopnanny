@@ -28,3 +28,5 @@ C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Sh
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\refint\Shopnanny.Infrastructure.dll
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.pdb
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\ref\Shopnanny.Infrastructure.dll
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Infrastructure\bin\Debug\net6.0\Shopnanny.Infrastructure.runtimeconfig.json
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny.Infrastructure\obj\Debug\net6.0\Shopnanny.Infrastructure.genruntimeconfig.cache

@@ -1,10 +1,82 @@
-﻿@{
+﻿@model Shopnanny.ViewModels.ProductViewModel
+@{
     ViewData["Title"] = "Goods";
     Layout = "_GlobalAdminLayout";
-    var products = ViewBag.Product as ICollection<Shopnanny.Core.Entities.Product>;
+    var products = ViewBag.Product as List<Shopnanny.Core.Entities.Product>;
     var count = 1;
 }
 <div>
+    <div class="d-flex pt-1 pb-1">
+         <button style="background-color: var(--main-color); color:whitesmoke;" type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Add Product</button>
+    </div>
+   
+    
+        <form asp-action="AddProduct" asp-controller="Product">
+            <div id="exampleModal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add New Product</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label asp-for="@Model.Name">Name:</label>
+                                <input type="text" asp-for="@Model.Name" placeholder="Enter Product Name"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="@Model.Description">Description:</label>
+                                <input type="text" asp-for="@Model.Description" placeholder="Enter Short Description"/>
+                            </div>
+                       
+                            <div class="form-group">
+                                <label asp-for="@Model.Price">Price:</label>
+                                <input type="Number" asp-for="@Model.Price" placeholder="0.00"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="@Model.Quantity">Quantity:</label>
+                                <input type="Number" asp-for="@Model.Quantity" placeholder="1"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="@Model.MinOrderQuantity">MOQ:</label>
+                                <input type="Number" asp-for="@Model.MinOrderQuantity" placeholder="1"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="@Model.LowStockQuantity">Low Stock:</label>
+                                <input type="Number" asp-for="@Model.LowStockQuantity" placeholder="1"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="@Model.ProductImageUrl">ImageUrl:</label>
+                                <input type="text" asp-for="@Model.ProductImageUrl" placeholder="Enter image url here..."/>
+                            </div>
+
+                            <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        @if (Model != null)
+        {
+            <script type="text/javascript">
+                $(function () {
+                    alert("Inserted Product: " + @Model.Name);
+                });
+            </script>
+        }
+    
+    
     <div>
         <table class="table table-striped">
             <thead>
@@ -12,9 +84,10 @@
                    <th>S/N</th>
                    <th>Product</th>
                    <th>Price</th>
-                   <th>Total Quantity</th>
-                   <th>Minimum Order Qt</th>
-                   <th>Low Stock Quantity</th>
+                   <th>Quantity</th>
+                   <th>MOQ</th>
+                   <th>Low Stock</th>
+                   <th>Image</th>
                    <th>Actions</th>
                 </tr>
             </thead>
@@ -24,13 +97,14 @@
                    <tr>
                        <td>@(count++)</td>
                        <td>@product.Name</td>
-                       <td>@product.Price</td>
+                       <td>@product.Price.ToString("#.##")</td>
                        <td>@product.Quantity</td>
                        <td>@product.MinOrderQuantity</td>
                        <td>@product.LowStockQuantity</td>
+                       <td><img width="50" height="50" src="@(product.ProductImages[0].ImageUrl)" alt="product image"/></td>
                        <td>
-                           <button style="border: 1px solid darkred; border-radius:3px; cursor: pointer"><i style="color: darkred" class="fa fa-trash"></i></button>
-                           <button style="border: 1px solid forestgreen; border-radius:3px; cursor: pointer"><i style="color: forestgreen" class="fa fa-edit"></i></button>
+                           <a asp-action="RemoveProduct" asp-controller="Product" asp-route-id="@product.Id" style="border: 1px solid darkred; padding:5px; border-radius:3px; cursor: pointer"><i style="color: darkred" class="fa fa-trash"></i></a>
+                           <a asp-route-id="@product.Id" style="border: 1px solid forestgreen; border-radius:3px; cursor: pointer; padding:5px;"><i style="color: forestgreen" class="fa fa-edit"></i></a>
                        </td>
                    </tr>
                 }

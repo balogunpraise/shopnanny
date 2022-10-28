@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shopnanny.Core.Entities
 {
-    public class PromoCodeUseage
+    public class PromoCodeUseage : BaseEntity
     {
     }
 }

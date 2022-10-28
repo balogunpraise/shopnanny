@@ -20,7 +20,7 @@ namespace Shopnanny.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromBody]ProductViewModel model)
+        public async Task<IActionResult> AddProduct(ProductViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -31,7 +31,8 @@ namespace Shopnanny.Controllers
                     Price = model.Price,
                     Quantity = model.Quantity,
                     MinOrderQuantity = model.MinOrderQuantity,
-                    CategoryId = model.CategoryId,
+                    LowStockQuantity = model.LowStockQuantity,
+                    //CategoryId = model.CategoryId,
                     ProductImages = new List<ProductImage>()
                     {
                         new ProductImage{ImageUrl = model.ProductImageUrl}
@@ -42,6 +43,12 @@ namespace Shopnanny.Controllers
                 return RedirectToAction("Index", new { result = "Product was successfull added" });
             }
             return RedirectToAction("Index", new {error = "Product was not added"});
+        }
+
+        public async Task<IActionResult> RemoveProduct(int id)
+        {
+            await _productRepository.DeleteProduct(id);
+            return RedirectToAction("ProductIndex", "Dashboard");
         }
     }
 }
