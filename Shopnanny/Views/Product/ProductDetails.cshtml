@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+    var product = ViewBag.ProductDetails as Shopnanny.Core.Entities.Product;
+}
+<style>
+    .details-container{
+        height: 90vh;
+        width: 90vw;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .details-container .details-left{
+        height: 70%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(8,7,16);
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-image-container{
+        height: 70%;
+        width: 100%;
+    }
+    .main-image-container img{
+        height: 100%;
+    }
+    .aux-image-container{
+        height: 30%;
+        width: 100%;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+    .aux-image-container img{
+        height: 50px;
+    }
+</style>
+<div class="container details-container">
+    <div class="details-left">
+        <div class="main-image-container">
+            <img src="@product.ProductImages[0].ImageUrl"/>
+        </div>
+        <div class="aux-image-container">
+            <img src="@product.ProductImages[0].ImageUrl"/>
+            <img src="@product.ProductImages[0].ImageUrl"/>
+            <img src="@product.ProductImages[0].ImageUrl"/>
+        </div>
+    </div>
+    <div class="details-right">
+        <div class="p-details">
+            <h4>@product.Name</h4>
+            <h2>₦@((product.Price).ToString("#.##"))</h2>
+            <h4>@product.Description</h4>
+        </div>
+        <div class="buttons-div">
+            <button>Add To Cart</button>
+            <button>Add To Wishlist</button>
+        </div>
+    </div>
+</div>

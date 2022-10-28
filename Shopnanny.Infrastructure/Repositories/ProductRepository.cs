@@ -104,5 +104,11 @@ namespace Shopnanny.Infrastructure.Repositories
         {
             return await _context.Products.Where(x => x.HotSale).Include(c => c.ProductImages).ToListAsync();
         }
+
+        public async Task<Product> GetProductById(int id)
+        {
+            return await _context.Products
+                .Include(x => x.ProductImages).Where(x => x.Id == id).SingleOrDefaultAsync();
+        }
     }
 }

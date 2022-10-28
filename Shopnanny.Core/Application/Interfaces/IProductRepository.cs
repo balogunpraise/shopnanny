@@ -16,5 +16,6 @@ namespace Shopnanny.Core.Application.Interfaces
         Task<Product> UpdateProduct(int id, Product update);
         Task ToggleProductHotSale(int id);
         Task<List<Product>> GetAllHotSaleProducts();
+        Task<Product> GetProductById(int id);
     }
 }

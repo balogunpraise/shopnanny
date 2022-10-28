@@ -45,6 +45,14 @@ namespace Shopnanny.Controllers
             return RedirectToAction("Index", new {error = "Product was not added"});
         }
 
+        public async Task<IActionResult> ProductDetails(int id)
+        {
+            var product = await _productRepository.GetProductById(id);
+            ViewBag.ProductDetails = product;
+            return View();
+        }
+
+
         public async Task<IActionResult> RemoveProduct(int id)
         {
             await _productRepository.DeleteProduct(id);
