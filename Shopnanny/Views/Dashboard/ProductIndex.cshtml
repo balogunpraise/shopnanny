@@ -95,6 +95,7 @@
                 @foreach(var product in products)
                 {
                     var actionColor = product.HotSale ? "forestgreen" : "darkred";
+                    var titleDesc = product.HotSale ? "Remove from hotsale" : "Add to hotsale";
                     <tr>
                        <td>@(count++)</td>
                        <td>@product.Name</td>
@@ -106,7 +107,7 @@
                        <td>
                            <a asp-action="RemoveProduct" asp-controller="Product" asp-route-id="@product.Id" style="border: 1px solid darkred; padding:5px; border-radius:3px; cursor: pointer" title="Delete product"><i style="color: darkred" class="fa fa-trash"></i></a>
                            <a asp-route-id="@product.Id" style="border: 1px solid forestgreen; border-radius:3px; cursor: pointer; padding:5px;" title="Edit product"><i style="color: forestgreen" class="fa fa-edit"></i></a>
-                           <a asp-action="ToggleProductHotSale" asp-controller="Product" asp-route-id="@product.Id" style="border: 1px solid @actionColor; border-radius:3px; cursor: pointer; padding:5px;" title="Add to hotsale"><i style="color: @actionColor" class="fa fa-bullseye"></i></a>
+                           <a asp-action="ToggleProductHotSale" asp-controller="Product" asp-route-id="@product.Id" style="border: 1px solid @actionColor; border-radius:3px; cursor: pointer; padding:5px;" title="@titleDesc"><i style="color: @actionColor" class="fa fa-bullseye"></i></a>
                        </td>
                    </tr>
                 }
