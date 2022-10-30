@@ -1,0 +1,25 @@
+﻿@model Shopnanny.ViewModels.AddToCategoryViewModel
+@{
+    ViewData["Title"] = "Add To Category";
+    Layout = "_GlobalAdminLayout";
+    var categories = ViewBag.Categories as List<Shopnanny.Core.Entities.Category>;
+    var product = ViewBag.ProductName as string;
+}
+
+
+<form style="width: 500px;" asp-action="AddProductToCategory" asp-controller="Product">
+  <div class="form-group">
+    <label asp-for="@Model.ProductId">ProductID</label>
+    <input asp-for="@Model.ProductId" type="password" class="form-control" value="@product" id="product" disabled>
+  </div>
+  <div class="form-group">
+    <label asp-for="@Model.CategoryName">Select Category:</label>
+    <select asp-for="@Model.CategoryName" type="text" class="form-control id="catname">
+            @foreach(var cat in categories)
+            {
+                <option>@cat.Name</option>
+            }
+    </select>
+  </div>
+  <button style="width: 50%; magin: auto!important; color: white; background: #E7AB3C; c" type="submit" class="btn">Submit</button>
+</form>

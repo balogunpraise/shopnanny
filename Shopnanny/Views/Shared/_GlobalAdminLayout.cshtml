@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Shopnanny.Core.Application.Interfaces
+@using Shopnanny.Core.Entities
+
+@inject UserManager<ApplicationUser> UserManager;
+@inject SignInManager<ApplicationUser> SignInManager;
+@inject IProductRepository ProductRepo;
+
+
+@{
+    int productCount = await ProductRepo.GetTotalProductCount();
+}
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -125,14 +137,17 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="https://thumbs.dreamstime.com/b/woman-portrait-23496008.jpg" alt="user-img" width="36" class="img-circle"><span >Praise</span></span> </a>
+							@{
+								var username = UserManager.GetUserName(User);
+							}
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="https://thumbs.dreamstime.com/b/woman-portrait-23496008.jpg" alt="user-img" width="36" class="img-circle"><span>@username</span></span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
 										<div class="u-img"><img src="https://thumbs.dreamstime.com/b/woman-portrait-23496008.jpg" alt="user"></div>
 										<div class="u-text">
-											<h4>Praise</h4>
-											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+											<h4>@username</h4>
+											<p class="text-muted">hello@themekita.com</p><a href="profile.html" style="background: #E7AB3C;" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
 										</div>
 									</li>
 									<div class="dropdown-divider"></div>
@@ -142,7 +157,7 @@
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>
+									<a asp-action="Logout" asp-controller="Account" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
 								</ul>
 				
 							</li>
@@ -157,18 +172,18 @@
 							<a asp-action="Index" asp-controller="Dashboard">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>
-								<span class="badge badge-count">5</span>
+								@*<span class="badge badge-count">5</span>*@
 							</a>
 						</li>
 						<li class="nav-item">
 							<a asp-action="ProductIndex" asp-controller="Dashboard">
 								<i class="la la-list-ul"></i>
 								<p>Products</p>
-								<span class="badge badge-count">14</span>
+								<span class="badge badge-count">@productCount</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a asp-action="Category" asp-controller="Dashboard">
+							<a asp-action="CategoryIndex" asp-controller="Category">
 								<i class="la la-list-ul"></i>
 								<p>Categories</p>
 								<span class="badge badge-count">50</span>

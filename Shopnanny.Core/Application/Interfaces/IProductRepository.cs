@@ -11,11 +11,12 @@ namespace Shopnanny.Core.Application.Interfaces
     {
         Task<Product> AddProduct(Product product);
         Task<List<Product>> GetAllProducts();
-        Task DeleteProduct(int id);
-        Task AddProductToCategory(int productId, string categoryName);
-        Task<Product> UpdateProduct(int id, Product update);
-        Task ToggleProductHotSale(int id);
+        Task DeleteProduct(string id);
+        Task AddProductToCategory(string productId, string categoryName);
+        Task<Product> UpdateProduct(string id, Product update);
+        Task ToggleProductHotSale(string id);
         Task<List<Product>> GetAllHotSaleProducts();
-        Task<Product> GetProductById(int id);
+        Task<Product> GetProductById(string id);
+        Task<int> GetTotalProductCount();
     }
 }

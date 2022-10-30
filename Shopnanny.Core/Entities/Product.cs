@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,11 @@ namespace Shopnanny.Core.Entities
         public bool HotSale { get; set; }
         public int MinOrderQuantity { get; set; }
         public int LowStockQuantity { get; set; }
-        /*public int CategoryId { get; set; }
-        public Category Category { get; set; }*/
-        public ICollection<Order>? Orders { get; set; }
-        public ICollection<Payment>? Payments { get; set; }
+        public Category Category { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
+        public virtual ICollection<Payment>? Payments { get; set; }
         /*public Cart Cart { get; set; }*/
-        public ICollection<CartItem> CartItems { get; set; }
+        public virtual ICollection<CartItem> CartItems { get; set; }
 
     }
 }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Shopnanny.Core.Application.Interfaces;
 using Shopnanny.Core.Entities;
+using Shopnanny.Hubs;
 using Shopnanny.Infrastructure;
 using Shopnanny.Infrastructure.Data;
 using Shopnanny.Infrastructure.Repositories;
@@ -16,6 +17,8 @@ builder.Services.AddIdentityService(builder.Configuration);
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddSignalR(c => c.EnableDetailedErrors = true);
 
 var app = builder.Build();
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
@@ -24,8 +27,8 @@ using (var scope = scopeFactory.CreateScope())
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
     var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    //DbInitializer.SeedRoleAsync(context, roleManager).Wait();
-    //DbInitializer.SeedUserAsync(context, userManager).Wait();
+    DbInitializer.SeedRoleAsync(context, roleManager).Wait();
+    DbInitializer.SeedUserAsync(context, userManager).Wait();
 }
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -45,5 +48,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapHub<ProductHub>("/producthub");
 app.Run();

@@ -15,6 +15,8 @@ namespace Shopnanny.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            builder.Entity<Product>().HasOne(x => x.Category).WithMany()
+                    .IsRequired(false);
         }
 
         public DbSet<Product> Products { get; set; }

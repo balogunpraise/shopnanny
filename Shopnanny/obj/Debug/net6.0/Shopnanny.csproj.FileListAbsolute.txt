@@ -104,3 +104,4 @@ C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\CloudinaryDotNet.
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\Humanizer.dll
 C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\pbalogun\Desktop\shopnanny\Shopnanny\bin\Debug\net6.0\libman.json

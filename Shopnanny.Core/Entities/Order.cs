@@ -10,7 +10,7 @@ namespace Shopnanny.Core.Entities
     {
         public string UserId { get; set; } = string.Empty;
         public decimal TotalAmmount { get; set; }
-        public int PaymentId { get; set; }
+        public Payment Payment { get; set; }
         public string ProcessedByUserId { get; set; } = string.Empty;
         public bool Status { get; set; }
 

@@ -36,7 +36,7 @@ namespace Shopnanny.Infrastructure.Repositories
             }
         }
 
-        public async Task<Product> UpdateProduct(int id, Product update)
+        public async Task<Product> UpdateProduct(string id, Product update)
         {
             var product = await _context.Products.FindAsync(id);
             if(product != null)
@@ -54,7 +54,7 @@ namespace Shopnanny.Infrastructure.Repositories
             return product;
         }
 
-        public async Task DeleteProduct(int id)
+        public async Task DeleteProduct(string id)
         {
             var product = await _context.Products.FindAsync(id);
             if(product != null)
@@ -64,22 +64,22 @@ namespace Shopnanny.Infrastructure.Repositories
             }
         }
 
-        public async Task AddProductToCategory(int productId, string categoryName)
+        public async Task AddProductToCategory(string productId, string categoryName)
         {
-            /*var category = await _context.Categories.
-                    Where(x => x.Name.Equals(categoryName.Trim(), StringComparison.InvariantCultureIgnoreCase))
+            var category = await _context.Categories.
+                    Where(x => x.Name.ToUpper() == categoryName.ToUpper())
                     .FirstOrDefaultAsync();
             var product = await _context.Products.FindAsync(productId);
-            if(category != null && product != null)
+            if (category != null && product != null)
             {
-                product.CategoryId = category.Id;
+                product.Category.Id = category.Id;
                 product.Category = category;
                 await _context.SaveChangesAsync();
-            }*/
+            }
 
         }
 
-        public async Task ToggleProductHotSale(int id)
+        public async Task ToggleProductHotSale(string id)
         {
             try
             {
@@ -105,10 +105,16 @@ namespace Shopnanny.Infrastructure.Repositories
             return await _context.Products.Where(x => x.HotSale).Include(c => c.ProductImages).ToListAsync();
         }
 
-        public async Task<Product> GetProductById(int id)
+        public async Task<Product> GetProductById(string id)
         {
             return await _context.Products
                 .Include(x => x.ProductImages).Where(x => x.Id == id).SingleOrDefaultAsync();
         }
+
+        public async Task<int> GetTotalProductCount()
+        {
+            return await _context.Products.CountAsync();
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using Shopnanny.Core.Entities;
 
 namespace Shopnanny.Controllers
 {
+   
     public class DashboardController : Controller
     {
         private readonly IProductRepository _productRepository;
@@ -14,8 +15,12 @@ namespace Shopnanny.Controllers
         {
             _productRepository = productRepository;
         }
+        
+        
+        [Authorize(Roles = RoleConstants.GlobalAdmin)]
         public IActionResult Index()
         {
+            
             return View();
         }
 

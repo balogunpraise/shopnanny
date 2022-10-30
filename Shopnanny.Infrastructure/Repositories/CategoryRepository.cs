@@ -14,17 +14,17 @@ namespace Shopnanny.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<string> AddCategory(string categoryName)
+        public async Task<string> AddCategory(Category categoryName)
         {
             var alreadyExists = await _context.Categories.
-                Where(x => x.Name.Trim().Equals(categoryName, StringComparison.InvariantCultureIgnoreCase))
+                Where(x => x.Name.Trim().ToLower() == categoryName.Name.ToLower())
                 .SingleOrDefaultAsync();
 
             if(alreadyExists == null)
             {
-                var entity = await _context.AddAsync(categoryName);
+                var entity = await _context.Categories.AddAsync(categoryName);
                 await _context.SaveChangesAsync();
-                return entity.Entity;
+                return entity.Entity.Name;
             }
             return String.Empty;
         }
@@ -43,12 +43,16 @@ namespace Shopnanny.Infrastructure.Repositories
         }
 
 
-        public async Task<Category> GetCategory(int id)
+        public async Task<Category> GetCategory(string id)
         {
             return await _context.Categories.SingleOrDefaultAsync(x => x.Id == id);    
         }
 
-        public async Task DeletCategory(int id)
+        public async Task<List<Category>> GetCategories()
+        {
+            return await _context.Categories.ToListAsync();
+        }
+        public async Task DeletCategory(string id)
         {
             var category = await _context.Categories.SingleOrDefaultAsync(x => x.Id == id);
             if(category != null)
