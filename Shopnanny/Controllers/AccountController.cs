@@ -52,6 +52,7 @@ namespace Shopnanny.Controllers
                         FirstName = model.FirstName,
                         LastName = model.LastName,
                         Email = model.Email,
+                        UserName = model.UserName ?? model.Email,
                         PhoneNumber = model.PhoneNumber,
                         Addresses = new List<Address>
                         {

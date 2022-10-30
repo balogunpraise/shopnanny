@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopnanny", "Shopnanny\Shopnanny.csproj", "{3320B79E-A58A-4ADD-9AE4-C3D029E35DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopnanny", "Shopnanny\Shopnanny.csproj", "{3320B79E-A58A-4ADD-9AE4-C3D029E35DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopnanny.Core", "Shopnanny.Core\Shopnanny.Core.csproj", "{30C58552-DEA0-4652-BC5F-859C7D402D79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopnanny.Core", "Shopnanny.Core\Shopnanny.Core.csproj", "{30C58552-DEA0-4652-BC5F-859C7D402D79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopnanny.Infrastructure", "Shopnanny.Infrastructure\Shopnanny.Infrastructure.csproj", "{42DA9FFC-F690-4F5C-8044-F183423A8B1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shopnanny.Infrastructure", "Shopnanny.Infrastructure\Shopnanny.Infrastructure.csproj", "{42DA9FFC-F690-4F5C-8044-F183423A8B1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

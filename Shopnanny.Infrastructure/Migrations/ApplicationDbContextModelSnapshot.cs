@@ -310,11 +310,52 @@ namespace Shopnanny.Infrastructure.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Shopnanny.Core.Entities.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("SenderUserName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("Notifications");
+                });
+
             modelBuilder.Entity("Shopnanny.Core.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
@@ -344,11 +385,13 @@ namespace Shopnanny.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationUserId");
+
                     b.HasIndex("PaymentId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Shopnanny.Core.Entities.Payment", b =>
@@ -390,6 +433,9 @@ namespace Shopnanny.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
@@ -423,6 +469,8 @@ namespace Shopnanny.Infrastructure.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
 
                     b.HasIndex("CategoryId");
 
@@ -566,8 +614,23 @@ namespace Shopnanny.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Shopnanny.Core.Entities.Notification", b =>
+                {
+                    b.HasOne("Shopnanny.Core.Entities.ApplicationUser", "User")
+                        .WithMany("Notifications")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Shopnanny.Core.Entities.Order", b =>
                 {
+                    b.HasOne("Shopnanny.Core.Entities.ApplicationUser", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("Shopnanny.Core.Entities.Payment", null)
                         .WithMany("Orders")
                         .HasForeignKey("PaymentId")
@@ -588,6 +651,10 @@ namespace Shopnanny.Infrastructure.Migrations
 
             modelBuilder.Entity("Shopnanny.Core.Entities.Product", b =>
                 {
+                    b.HasOne("Shopnanny.Core.Entities.ApplicationUser", null)
+                        .WithMany("Products")
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("Shopnanny.Core.Entities.Category", null)
                         .WithMany("Products")
                         .HasForeignKey("CategoryId");
@@ -619,6 +686,12 @@ namespace Shopnanny.Infrastructure.Migrations
             modelBuilder.Entity("Shopnanny.Core.Entities.ApplicationUser", b =>
                 {
                     b.Navigation("Addresses");
+
+                    b.Navigation("Notifications");
+
+                    b.Navigation("Orders");
+
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("Shopnanny.Core.Entities.Category", b =>

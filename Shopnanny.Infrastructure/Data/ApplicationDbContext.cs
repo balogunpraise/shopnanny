@@ -24,7 +24,8 @@ namespace Shopnanny.Infrastructure.Data
         //public DbSet<PromoCode> PromoCodes { get; set; }
         //public DbSet<Cart> Carts { get; set; }
         //public DbSet<CartItem> CartItems { get; set; }
-        //public DbSet<Order> Orders { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Order> Orders { get; set; }
         //public DbSet<Otp> Otps { get; set; }
         //public DbSet<PromoCodeUseage> PromoCodeUseages { get; set; }
 

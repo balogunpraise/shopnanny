@@ -1,0 +1,95 @@
+﻿@model List<Shopnanny.Core.Entities.Product>
+@{
+    Layout = "_Layout";
+}
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .my-container{
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        overflow-x: hidden;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .my-card{
+        width: 250px;
+        height: 300px;
+        background: white;
+        position: relative;
+    }
+    .price-div{
+        position: absolute;
+        background: green;
+        width: 100px;
+        height: 35px;
+        padding: 3px;
+    }
+    .price-div h4{
+        color: whitesmoke;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .price-div h4 span{
+        font-size: 13px;
+        text-decoration: line-through;
+    }
+    .my-card .image-section{
+        width: 100%;
+        height: 85%;
+        background-size: contain;
+        background-position: center;
+    }
+    .image-section img{
+        object-fit: contain;
+    }
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .action-section{
+        width: 100%;
+        /*height: 5%;*/
+        padding: 3px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .action-section .btn{
+        height: 100%;
+        padding: 5px;
+        width: 50px;
+        background: #E7AB3C;
+        border: none;
+        color: white;
+        transition: transform 0.5s;
+    }
+    .action-section .btn:hover{
+        transform: translateY(-5px);
+    }
+</style>
+<html>
+    <body>
+        <div class="my-container">
+            @foreach(var product in @Model)
+            {
+                <div class="my-card">
+                    <div class="price-div">
+                        <h4>₦@((product.Price).ToString("#.##")) <span> ₦@((product.Price + 2000).ToString("#.##"))</span></h4>
+                    </div>
+                    <div style="background-image: url(@product.ProductImages[0].ImageUrl)" class="image-section">
+                        @*<img src="@product.ProductImages[0].ImageUrl" />*@
+                    </div>
+                    <div class="action-section">
+                        <button class="btn"><i class="icon_bag_alt"></i></button>
+                        <a asp-action="ProductDetails" asp-controller="Product" asp-route-id="@product.Id" class="btn" style="width: 130px">Quick View</a>
+                        <button class="btn"><i class="icon_heart_alt"></i></button>
+                    </div>
+                </div>
+            }
+        </div>
+    </body>
+</html>
