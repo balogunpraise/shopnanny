@@ -15,6 +15,7 @@ builder.Services.AddInfrastructureConfiguration(builder.Configuration);
 builder.Services.AddIdentityService(builder.Configuration);
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
