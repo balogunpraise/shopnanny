@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Shopnanny.Core.Entities
+
+@inject SignInManager<ApplicationUser> SigninManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@if (SigninManager.IsSignedIn(User))
+{
+    <a class="login-panel" asp-action="Logout" asp-controller="Account" title="Logout"><i class="fa fa-user"></i>@UserManager.GetUserName(User)</a>
+}
+else
+{
+    <a class="login-panel" asp-action="Login" asp-controller="Account"><i class="fa fa-user"></i>Login</a>
+}
+

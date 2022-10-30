@@ -125,11 +125,10 @@ namespace Shopnanny.Controllers
         }
 
 
-        [HttpPost]
         public async Task<ActionResult> Logout()
         {
             await _signinManager.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
     }
 }
