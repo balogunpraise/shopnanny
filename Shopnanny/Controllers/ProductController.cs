@@ -59,7 +59,7 @@ namespace Shopnanny.Controllers
         public async Task<IActionResult> AddProductToCategory(string id, string categoryName)
         {
             await _productRepository.AddProductToCategory(id, categoryName);
-            return RedirectToAction("ProductIndex", "Dashboard", new { error = "Product was not added" });
+            return RedirectToAction("ProductIndex", "Dashboard", new { error = "Product was added" });
         }
         public async Task<IActionResult> EditProduct(string id, ProductViewModel model)
         {
